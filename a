@@ -1,0 +1,25 @@
+set linedelay 0
+set $weakheal 209, 870 13611130
+set $ultheal 351, 868 11965532
+set $posweakheal 1849, 125 6247502
+set $posultheal 1833, 124 7493194
+set $weakhk f1
+set $weakheal1 on
+set $ultheal1 on
+set $ulthk f5
+set hotkeypause ~{v}
+if ($ultheal1 = on)
+    goto 1
+    end_if
+    if ($weakheal1 = on)
+    goto 2
+    end_if
+:1
+if ($ultheal) and ($posultheal)
+    send $ulthk 1000
+    else
+        :2
+        if ($weakheal) and ($posweakheal)
+            send $weakhk 1000
+    end_if
+    end_if
